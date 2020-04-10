@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <h1>Welcome to <span class="zf-green">Zend Framework Playlist Project</span></h1>
+
+    <p>
+        Qui verranno inseriti nuovi record per le playlist
+    </p>
+
+</div>
+<a href="<?php echo $this->url('post', ['action' =>'add']);?>"> aggiungi brano </a>
+<br />
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titolo</th>
+      <th scope="col">Azione</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    
+    <?php
+    foreach ($records as $record) {
+        ?>
+      <tr class="table-active">
+      <th scope="row">
+          <?php echo($record->getId()); ?></th>
+        <th><?php echo($record->getTitolo()); ?></th>
+        <th> <a href="<?php echo $this->url('post', ['action' =>'delete','id' => $record->getId(),'bottleof' => 'WADA']);?>"> elimina </a></th>
+      </tr>
+      <?php
+    }
+    ?>
+    
+    
+  </tbody>
+</table>

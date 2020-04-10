@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <h1>Add</h1>
+
+<br /><br />
+
+
+<?php
+
+$form->setAttribute('method', 'post')
+     ->setAttribute('action', $this->url()."/add")
+     ->prepare()
+        
+        /*
+         * $form->setAttribute('action', $this->url('post', ['action' => 'add']));
+         * $form->prepare();
+         */
+?>
+
+<?php
+echo $this->form()->openTag($form);
+
+echo $this->formRow($form->get('titolo'));
+echo $this->formSubmit($form->get('submit'));
+
+
+?>
+
+<br />
+<a href="<?php echo $this->url('post', ['action' =>'index']);?>">Torna indietro</a>
+
+</div>
